@@ -21,3 +21,10 @@ Write-Host "##vso[task.setvariable variable=webAppUrl;isoutput=true]$webAppUrl"
 Write-Host "##vso[task.setvariable variable=location;isoutput=true]$location"
 Write-Host "##vso[task.setvariable variable=resourceGroupName;isoutput=true]$resourceGroupName"
 Write-Host "##vso[task.setvariable variable=resourceGroupId;isoutput=true]$resourceGrouId"
+
+# writeforGithub
+"webAppName=$webAppName" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
+"webAppUrl=$webAppUrl" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
+"location=$location" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
+"resourceGroupName=$resourceGroupName" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
+"resourceGroupName=$resourceGroupId" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
